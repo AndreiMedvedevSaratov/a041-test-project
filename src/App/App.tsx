@@ -7,7 +7,7 @@ import { Info } from "../Components/Info/Info";
 export const App = () => {
   return (
     <Provider store={store}>
-      <h1>a041-test-project - Currencies Academic Terms</h1>
+      <h3>a041-test-project - Currencies Academic Terms</h3>
 
       <Select />
 
