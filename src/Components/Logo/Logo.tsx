@@ -1,7 +1,11 @@
 import React, { FC, memo } from 'react';
 import { Typography } from 'antd';
 import PropTypes from 'prop-types';
-import { logoContainer, titleStyles, textStyles, wrapperStyles } from './styles';
+import { useMediaQuery } from 'react-responsive';
+import {
+  logoContainer, titleStyles, textStyles,
+  wrapperStyles, textMobileStyles, titleMobileStyles
+} from './styles';
 
 interface LogoProps {
   styles?: React.CSSProperties;
@@ -12,15 +16,19 @@ export const Logo: FC<LogoProps> = memo(({ styles = {} }) => {
   const title = 'CAT';
   const nameInArray = ['currencies', 'academic', 'terms'];
 
+  const isDesktop = useMediaQuery({ minWidth: 500 });
+  const textStyle: React.CSSProperties = isDesktop ? textStyles : textMobileStyles;
+  const titleStyle: React.CSSProperties = isDesktop ? titleStyles : titleMobileStyles;
+
   const text = nameInArray.map((item) => (
-    <Text key={item} style={textStyles}>
+    <Text key={item} style={textStyle}>
       {item}
     </Text>
   ));
 
   return (
     <div style={{ ...logoContainer, ...styles }}>
-      <Title style={{ ...titleStyles }}>
+      <Title style={{ ...titleStyle }}>
         {title}
       </Title>
       <div style={{ ...wrapperStyles }}>

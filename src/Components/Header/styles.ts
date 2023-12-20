@@ -1,10 +1,12 @@
 import { colors } from "../../App/styles";
 
-export const headerWrapper = {
+export const headerWrapper: React.CSSProperties = {
   backgroundColor: colors.white,
-  '@media screen and (max-width: 500px)': {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
+};
+
+export const headerMobileWrapper: React.CSSProperties = {
+  backgroundColor: colors.white,
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
 };

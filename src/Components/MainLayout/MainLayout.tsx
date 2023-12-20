@@ -5,7 +5,6 @@ import { useMediaQuery } from 'react-responsive';
 import { Header } from '../Header/Header';
 import { KittenImage } from '../KittenImage/KittenImage';
 import { Info } from '../Info/Info';
-// import { layout } from './styles';
 
 export const MainLayout = () => {
   const { Content } = Layout;

@@ -14,12 +14,28 @@ export const titleStyles: React.CSSProperties = {
   marginBottom: '0.5rem',
 };
 
+export const titleMobileStyles: React.CSSProperties = {
+  fontFamily: 'Kreon',
+  fontSize: '7rem',
+  fontWeight: 500,
+  textShadow: '0px 4px 4px rgba(0, 0, 0, 0.2)',
+  marginBottom: '1.5rem',
+};
+
 export const textStyles: React.CSSProperties = {
   fontSize: '0.6rem',
   fontFamily: 'Kreon',
   fontWeight: 400,
   marginLeft: '0.3rem',
   width: '3.2rem',
+};
+
+export const textMobileStyles: React.CSSProperties = {
+  fontSize: '1.6rem',
+  fontFamily: 'Kreon',
+  fontWeight: 400,
+  marginLeft: '1.3rem',
+  width: '7rem',
 };
 
 export const wrapperStyles: React.CSSProperties = {

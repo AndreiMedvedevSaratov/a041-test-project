@@ -3,7 +3,8 @@ import { Select } from 'antd';
 import { useAppDispatch, useAppSelector } from "../../store/store";
 import { fetchCurrencies } from "../../store/utils/fetchCurrencies";
 import { setActiveCurrency } from "../../store/slice/currencies";
-import { selectStyles, menuStyles } from "./styles";
+import { useMediaQuery } from 'react-responsive';
+import { selectStyles, menuStyles, selectMobileStyles } from "./styles";
 import PropTypes from 'prop-types';
 
 interface HeaderSelectProps {
@@ -15,6 +16,9 @@ export const HeaderSelect: FC<HeaderSelectProps> = ({ styles = {} }) => {
   const [selectedCurrency, setSelectedCurrency] = useState<string | undefined>(undefined);
   const dispatch = useAppDispatch();
   const { Option } = Select;
+
+  const isDesktop = useMediaQuery({ minWidth: 500 });
+  const selectStyle: React.CSSProperties = isDesktop ? selectStyles : selectMobileStyles;
 
   const options = list.map((item) => (
     <Option value={item.id} key={item.id}>
@@ -40,7 +44,7 @@ export const HeaderSelect: FC<HeaderSelectProps> = ({ styles = {} }) => {
       <Select
         value={selectedCurrency}
         onChange={handleChange}
-        style={selectStyles as React.CSSProperties}
+        style={selectStyle}
         dropdownRender={(menu) => <div style={menuStyles as React.CSSProperties}>{menu}</div>}
       >
         {options}
